@@ -1,23 +1,37 @@
 import React from 'react';
 import Card from './ui/Card';
 import Button from './ui/Button';
-import { BookOpen, FileText, Search, TrendingUp, Users, Shield } from 'lucide-react';
+import { BookOpen, FileText, Search, TrendingUp, Users, Shield, CheckSquare, Sparkles } from 'lucide-react';
 
-const Dashboard = ({ onNavigate }) => {
+const Dashboard = ({ onNavigate, onScenarioSelect, rightsModules, templates }) => {
   const quickActions = [
     {
+      icon: Sparkles,
+      title: 'AI Search',
+      description: 'Describe your situation in natural language',
+      action: () => onNavigate('search'),
+      color: 'bg-purple-500'
+    },
+    {
       icon: Search,
-      title: 'Search Rights',
-      description: 'Find specific rights information',
+      title: 'Browse Rights',
+      description: 'Explore categorized rights information',
       action: () => onNavigate('rights'),
       color: 'bg-blue-500'
     },
     {
       icon: FileText,
-      title: 'Browse Templates',
+      title: 'Legal Templates',
       description: 'Access dispute resolution templates',
       action: () => onNavigate('templates'),
       color: 'bg-green-500'
+    },
+    {
+      icon: CheckSquare,
+      title: 'Scenario Guides',
+      description: 'Step-by-step guidance for common situations',
+      action: () => onScenarioSelect('tenant-dispute'),
+      color: 'bg-orange-500'
     }
   ];
 
@@ -43,8 +57,8 @@ const Dashboard = ({ onNavigate }) => {
   ];
 
   const stats = [
-    { label: 'Rights Modules', value: '250+', icon: BookOpen },
-    { label: 'Templates', value: '50+', icon: FileText },
+    { label: 'Rights Modules', value: rightsModules?.length || '3', icon: BookOpen },
+    { label: 'Templates', value: templates?.length || '2', icon: FileText },
     { label: 'Users Helped', value: '10K+', icon: Users },
   ];
 
@@ -61,13 +75,13 @@ const Dashboard = ({ onNavigate }) => {
       </div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {quickActions.map((action, index) => {
           const Icon = action.icon;
           return (
             <Card key={index} variant="interactive" onClick={action.action}>
-              <div className="flex items-center space-x-4">
-                <div className={`w-12 h-12 ${action.color} rounded-lg flex items-center justify-center`}>
+              <div className="text-center space-y-3">
+                <div className={`w-12 h-12 ${action.color} rounded-lg flex items-center justify-center mx-auto`}>
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <div>
