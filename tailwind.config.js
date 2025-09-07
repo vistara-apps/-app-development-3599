@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: 'hsl(220 20% 98%)',
-        accent: 'hsl(170 80% 45%)',
-        primary: 'hsl(240 80% 50%)',
-        surface: 'hsl(220 20% 100%)',
+        'bg': 'hsl(220 20% 98%)',
+        'accent': 'hsl(170 80% 45%)',
+        'primary': 'hsl(240 80% 50%)',
+        'surface': 'hsl(220 20% 100%)',
       },
       borderRadius: {
         'lg': '12px',
