@@ -91,7 +91,7 @@ src/
 │   ├── ScenarioGuide.jsx      # Step-by-step guides
 │   └── Templates.jsx          # Legal templates
 ├── hooks/
-│   ├── useAuth.js             # Authentication logic
+│   ├── useAuth.jsx            # Authentication logic
 │   ├── useOpenAI.js           # AI integration
 │   ├── usePaymentContext.js   # Payment processing
 │   └── useSupabase.js         # Database operations

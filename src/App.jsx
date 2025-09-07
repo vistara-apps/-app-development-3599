@@ -7,7 +7,7 @@ import SavedItems from './components/SavedItems';
 import AISearch from './components/AISearch';
 import ScenarioGuide from './components/ScenarioGuide';
 import { useSupabase } from './hooks/useSupabase';
-import { useAuthFallback } from './hooks/useAuth';
+import { useAuthFallback } from './hooks/useAuth.jsx';
 
 function App() {
   const [currentView, setCurrentView] = useState('dashboard');
